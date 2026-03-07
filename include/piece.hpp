@@ -8,19 +8,20 @@ class Piece {
         // ----------------------------------------------------------------------------
         // private attribute
         // ----------------------------------------------------------------------------    
-        std::string _name;
-        bool _isBlack;
+        const std::string _name;
+        const bool _isBlack;
 
     public:
         // ----------------------------------------------------------------------------
         // constructors
         // ----------------------------------------------------------------------------    
-        Piece(bool isBlack, std::string name);
+        Piece(bool isBlack, std::string name) : 
+            _name(name), _isBlack(isBlack) {};
 
         // ----------------------------------------------------------------------------
         // abstract methods
         // ---------------------------------------------------------------------------- 
-        virtual bool isValidMove(Position start_p, Position end_p, Position capture_p, Plateau* plateau) = 0;
+        virtual bool isValidMove(Position &start_p, Position &end_p, Position &capture_p, Plateau* plateau) = 0;
 
         // ----------------------------------------------------------------------------
         // methods

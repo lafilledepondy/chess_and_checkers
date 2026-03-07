@@ -1,3 +1,6 @@
+/////// TODOOOOO x and y are const!!!!!!!
+
+
 #include <stdio.h>
 #include <assert.h>
 
