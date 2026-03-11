@@ -17,13 +17,13 @@ class Piece {
         // ----------------------------------------------------------------------------
         // constructors
         // ----------------------------------------------------------------------------    
-        Piece(bool isBlack, std::string name) : 
-            _name(name), _isBlack(isBlack) {};
+        Piece(bool isBlack, std::string name); 
 
         // ----------------------------------------------------------------------------
         // abstract methods
         // ---------------------------------------------------------------------------- 
-        virtual bool isValidMove(const Position &start_pos, const Position &end_pos, const Position &capture_pos, Plateau* plateau) = 0;
+        virtual bool isValidMove(const Position &start_pos, const Position &end_pos, 
+            bool isCapture, Plateau* board) = 0;
 
         // ----------------------------------------------------------------------------
         // methods

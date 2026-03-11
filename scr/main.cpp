@@ -26,6 +26,10 @@ White move:
 > D3
 */
 
+#include "position.hpp"
+#include <vector>
+
+
 int main() {
   std::cout << "+==============================================================+" << std::endl;
   std::cout << "|                       CHESS & CHECKERS                       |" << std::endl;

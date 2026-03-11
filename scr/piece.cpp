@@ -1,5 +1,10 @@
 #include "piece.hpp"
 
+Piece::Piece(bool isBlack, std::string name) {
+    this->_name = name;
+    this->_isBlack = isBlack;
+}
+
 std::string Piece::toString() const {
     std::ostringstream oss;
     if (this->_isBlack) {

@@ -20,11 +20,11 @@ Position::Position(std::string str) {
     this->_y = str[1] - '0';
 }
 
-int Position::getX() {
+int Position::getX() const {
     return this->_x;
 }
 
-int Position::getY() {
+int Position::getY() const {
     return this->_y;
 }
 

@@ -11,20 +11,26 @@ class Plateau {
         // ----------------------------------------------------------------------------
         // protected attribute
         // ----------------------------------------------------------------------------    
-        std::vector<std::vector<Piece *>> plateau; // <> Piece *[][] Plateau
+        std::vector<std::vector<Piece *>> plateau_vec; // <> Piece *[][] Plateau
 
         // ----------------------------------------------------------------------------
         // constructors
         // ----------------------------------------------------------------------------    
         Plateau(int height, int width);
 
+        // ----------------------------------------------------------------------------
+        // methods
+        // ----------------------------------------------------------------------------         
+        void add(Piece * &pi, const Position &pos);
+        void move(const Position &start_pos, const Position &end_pos);  
+
     public:
 
         // ----------------------------------------------------------------------------
         // getters
         // ---------------------------------------------------------------------------- 
-        int getHeight();
-        int getWidth();
+        int getHeight() const;
+        int getWidth() const;
 
         // ----------------------------------------------------------------------------
         // abstract methods
@@ -34,14 +40,7 @@ class Plateau {
         // ----------------------------------------------------------------------------
         // methods
         // ----------------------------------------------------------------------------         
-        bool isInside(const Position &pos);
+        bool isInside(const Position &pos) const;
         Piece * getPiece(const Position &pos);
         void turn(const Position &start_pos, const Position &end_pos, bool turnBlack);
-
-    protected : 
-        // ----------------------------------------------------------------------------
-        // methods
-        // ----------------------------------------------------------------------------         
-        void add(Piece * pi, const Position &pos);
-        void move(const Position &start_pos, const Position &end_pos);        
 };
