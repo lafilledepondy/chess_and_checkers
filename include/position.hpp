@@ -33,4 +33,6 @@ class Position {
         // methods
         // ----------------------------------------------------------------------------        
         std::string toString() const;
+        bool operator==(const Position& other) const;
+        bool operator!=(const Position& other) const;
 };

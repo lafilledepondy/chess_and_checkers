@@ -23,8 +23,8 @@ std::string Piece::toString() const {
 std::vector<Position> Piece::getValidMoves(const Position& start, const Plateau* plateau) const {
     std::vector<Position> possibleMoves_vec;
 
-    for (int x=0; x< plateau->getWidth(); x++) {
-        for (int y=0; y< plateau->getWidth(); y++) {
+    for (int x = 1; x <= plateau->getWidth(); x++) {
+        for (int y = 1; y <= plateau->getHeight(); y++) {
             Position end(x, y); 
             bool isCapture = (plateau->getPiece(end) != nullptr);
 

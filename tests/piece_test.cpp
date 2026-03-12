@@ -65,7 +65,7 @@ TEST(PieceTest, GetValidMovesAll) {
     TestPiece piece(true, "pawn");
     TestPlateau board(8,8);
 
-    Position start(0,0);
+    Position start(1,1);
 
     auto moves = piece.getValidMoves(start, &board);
 
