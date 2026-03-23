@@ -15,7 +15,7 @@ bool Rook::isValidMove(const Position &start_pos, const Position &end_pos, bool 
     // straight line
     if (!(dx == 0 || dy == 0)) return false;
 
-    // path checking
+    // check path
     int stepX = dx == 0 ? 0 : (end_pos.getX() > start_pos.getX() ? 1 : -1); // 0: no move ; 1: move right -1: move left
     int stepY = dy == 0 ? 0 : (end_pos.getY() > start_pos.getY() ? 1 : -1); 
 

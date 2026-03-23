@@ -10,13 +10,12 @@ bool Bishop::isValidMove(const Position &start_pos, const Position &end_pos, boo
     // no move
     if (dx == 0 && dy == 0) return false;
 
-    // straight diagonal
+    // must be diagonal
     if (dx != dy) return false;
 
-    // path checking
-    int stepX = (end_pos.getX() > start_pos.getX()) ? 1 : -1; // 1: move right -1: move left
+    // check path
+    int stepX = (end_pos.getX() > start_pos.getX()) ? 1 : -1;
     int stepY = (end_pos.getY() > start_pos.getY()) ? 1 : -1;
-
     int x = start_pos.getX() + stepX;
     int y = start_pos.getY() + stepY;
 
