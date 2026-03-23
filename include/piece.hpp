@@ -38,5 +38,6 @@ class Piece {
         // methods
         // ----------------------------------------------------------------------------
         std::string toString() const;
+        std::string toUnicodeString() const;
         std::vector<Position> getValidMoves(const Position& start, const Plateau* plateau) const;
 };

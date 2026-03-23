@@ -27,4 +27,5 @@ class Checkerboard: public Plateau {
         // ----------------------------------------------------------------------------         
         void initialConditions();
         std::string toString() const;
+        std::string toUnicodeString() const;
 };

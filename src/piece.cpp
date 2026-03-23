@@ -20,6 +20,28 @@ std::string Piece::toString() const {
     return oss.str();    
 }
 
+std::string Piece::toUnicodeString() const {
+    if (_name == "pawn") {
+        return _isBlack ? "♟" : "♙";
+    }
+    if (_name == "rook") {
+        return _isBlack ? "♜" : "♖";
+    }
+    if (_name == "horse") {
+        return _isBlack ? "♞" : "♘";
+    }
+    if (_name == "bishop") {
+        return _isBlack ? "♝" : "♗";
+    }
+    if (_name == "queen") {
+        return _isBlack ? "♛" : "♕";
+    }
+    if (_name == "king") {
+        return _isBlack ? "♚" : "♔";
+    }
+    return "?";
+}
+
 std::vector<Position> Piece::getValidMoves(const Position& start, const Plateau* plateau) const {
     std::vector<Position> possibleMoves_vec;
 

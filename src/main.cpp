@@ -16,7 +16,8 @@ void chessMain() {
     bool turnBlack = false; // white starts
 
     while (true) {
-        std::cout << cb.toString() << std::endl;
+        // std::cout << cb.toString() << std::endl;
+
         std::cout << (turnBlack ? "Black" : "White") << " move: \n> ";
         std::getline(std::cin, input);
 
@@ -67,7 +68,8 @@ int main() {
     cb.play(Position("A2"), Position("A4"), true);
     cb.play(Position("B1"), Position("C3"), true);
     
-    std::cout << cb.toString() << std::endl;
+    // std::cout << cb.toString() << std::endl;
+    std::cout << cb.toUnicodeString() << std::endl;
 
     return 0;
 }

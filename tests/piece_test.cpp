@@ -54,3 +54,21 @@ TEST(PieceTest, GetValidMovesAll) {
 
     EXPECT_EQ(moves.size(), 63);
 }
+
+TEST(PieceTest, UnicodeSymbolsBlack) {
+    EXPECT_EQ(TestPiece(true, "pawn").toUnicodeString(), "♟");
+    EXPECT_EQ(TestPiece(true, "rook").toUnicodeString(), "♜");
+    EXPECT_EQ(TestPiece(true, "horse").toUnicodeString(), "♞");
+    EXPECT_EQ(TestPiece(true, "bishop").toUnicodeString(), "♝");
+    EXPECT_EQ(TestPiece(true, "queen").toUnicodeString(), "♛");
+    EXPECT_EQ(TestPiece(true, "king").toUnicodeString(), "♚");
+}
+
+TEST(PieceTest, UnicodeSymbolsWhite) {
+    EXPECT_EQ(TestPiece(false, "pawn").toUnicodeString(), "♙");
+    EXPECT_EQ(TestPiece(false, "rook").toUnicodeString(), "♖");
+    EXPECT_EQ(TestPiece(false, "horse").toUnicodeString(), "♘");
+    EXPECT_EQ(TestPiece(false, "bishop").toUnicodeString(), "♗");
+    EXPECT_EQ(TestPiece(false, "queen").toUnicodeString(), "♕");
+    EXPECT_EQ(TestPiece(false, "king").toUnicodeString(), "♔");
+}
