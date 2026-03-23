@@ -41,21 +41,21 @@ void Checkerboard::initialConditions() {
     // OTHER PIECES   
     // ---black
     addPiece(new Rook(true), Position(1, 1));
-    addPiece(new Horse(true), Position(2, 1));    
+    addPiece(new Cavalier(true), Position(2, 1));    
     addPiece(new Bishop(true), Position(3, 1));    
     addPiece(new Queen(true), Position(4, 1));    
     addPiece(new King(true), Position(5, 1));    
     addPiece(new Bishop(true), Position(6, 1));    
-    addPiece(new Horse(true), Position(7, 1));    
+    addPiece(new Cavalier(true), Position(7, 1));    
     addPiece(new Rook(true), Position(8, 1)); 
     // // ---white
     addPiece(new Rook(false), Position(1, 8));
-    addPiece(new Horse(false), Position(2, 8));    
+    addPiece(new Cavalier(false), Position(2, 8));    
     addPiece(new Bishop(false), Position(3, 8));    
     addPiece(new Queen(false), Position(4, 8));    
     addPiece(new King(false), Position(5, 8));    
     addPiece(new Bishop(false), Position(6, 8));    
-    addPiece(new Horse(false), Position(7, 8));    
+    addPiece(new Cavalier(false), Position(7, 8));    
     addPiece(new Rook(false), Position(8, 8));     
 }
 

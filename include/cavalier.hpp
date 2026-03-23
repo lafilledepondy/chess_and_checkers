@@ -6,12 +6,12 @@
 
 #include "piece.hpp"
 
-class Horse: public Piece {
+class Cavalier: public Piece {
     public:
         // ----------------------------------------------------------------------------
         // constructors
         // ----------------------------------------------------------------------------    
-        Horse(bool isBlack);
+        Cavalier(bool isBlack);
 
         // ----------------------------------------------------------------------------
         // methods

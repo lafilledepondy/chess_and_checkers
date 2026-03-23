@@ -16,54 +16,55 @@ public:
     }
 };
 
-TEST(RookTest, VerticalMoveValid) {
-    RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
-
-    EXPECT_NO_THROW(cb.play(Position("A1"), Position("A6"), true));
-    EXPECT_EQ(cb.getPiece(Position("A1")), nullptr);
-    EXPECT_NE(cb.getPiece(Position("A6")), nullptr);
-}
-
 TEST(RookTest, HorizontalMoveValid) {
     RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
+    cb.place(new Rook(true), Position("D4"));
 
-    EXPECT_NO_THROW(cb.play(Position("A1"), Position("F1"), true));
-    EXPECT_EQ(cb.getPiece(Position("A1")), nullptr);
-    EXPECT_NE(cb.getPiece(Position("F1")), nullptr);
+    EXPECT_NO_THROW(cb.play(Position("D4"), Position("H4"), true));
+    EXPECT_EQ(cb.getPiece(Position("D4")), nullptr);
+    EXPECT_NE(cb.getPiece(Position("H4")), nullptr);
+}
+
+TEST(RookTest, VerticalMoveValid) {
+    RookTestBoard cb;
+    cb.place(new Rook(true), Position("D4"));
+
+    EXPECT_NO_THROW(cb.play(Position("D4"), Position("D8"), true));
+    EXPECT_EQ(cb.getPiece(Position("D4")), nullptr);
+    EXPECT_NE(cb.getPiece(Position("D8")), nullptr);
 }
 
 TEST(RookTest, DiagonalMoveInvalid) {
     RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
+    cb.place(new Rook(true), Position("D4"));
 
-    EXPECT_THROW(cb.play(Position("A1"), Position("B2"), true), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("D4"), Position("E5"), true), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("D4"), Position("F6"), true), InvalidMoveException);
 }
 
 TEST(RookTest, CannotJumpOverPiece) {
     RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
-    cb.place(new Pawn(true), Position("A3"));
+    cb.place(new Rook(true), Position("D4"));
+    cb.place(new Pawn(true), Position("D6"));
 
-    EXPECT_THROW(cb.play(Position("A1"), Position("A6"), true), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("D4"), Position("D8"), true), InvalidMoveException);
 }
 
 TEST(RookTest, CaptureEnemyPiece) {
     RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
-    cb.place(new Pawn(false), Position("A6"));
+    cb.place(new Rook(true), Position("D4"));
+    cb.place(new Pawn(false), Position("D8"));
 
-    EXPECT_NO_THROW(cb.play(Position("A1"), Position("A6"), true));
-    EXPECT_EQ(cb.getPiece(Position("A1")), nullptr);
-    ASSERT_NE(cb.getPiece(Position("A6")), nullptr);
-    EXPECT_TRUE(cb.getPiece(Position("A6"))->getIsBlack());
+    EXPECT_NO_THROW(cb.play(Position("D4"), Position("D8"), true));
+    EXPECT_EQ(cb.getPiece(Position("D4")), nullptr);
+    ASSERT_NE(cb.getPiece(Position("D8")), nullptr);
+    EXPECT_TRUE(cb.getPiece(Position("D8"))->getIsBlack());
 }
 
 TEST(RookTest, CannotCaptureOwnPiece) {
     RookTestBoard cb;
-    cb.place(new Rook(true), Position("A1"));
-    cb.place(new Pawn(true), Position("A6"));
+    cb.place(new Rook(true), Position("D4"));
+    cb.place(new Pawn(true), Position("D8"));
 
-    EXPECT_THROW(cb.play(Position("A1"), Position("A6"), true), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("D4"), Position("D8"), true), InvalidMoveException);
 }

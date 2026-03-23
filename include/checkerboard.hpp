@@ -10,7 +10,7 @@
 #include "plateau.hpp"
 #include "pawn.hpp"
 #include "rook.hpp"
-#include "horse.hpp"
+#include "cavalier.hpp"
 #include "queen.hpp"
 #include "bishop.hpp"
 #include "king.hpp"

@@ -27,7 +27,7 @@ std::string Piece::toUnicodeString() const {
     if (_name == "rook") {
         return _isBlack ? "♜" : "♖";
     }
-    if (_name == "horse") {
+    if (_name == "cavalier") {
         return _isBlack ? "♞" : "♘";
     }
     if (_name == "bishop") {

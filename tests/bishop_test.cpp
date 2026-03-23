@@ -30,8 +30,8 @@ TEST(BishopTest, DiagonalMoveInvalid) {
     BishopTestBoard cb;
     cb.place(new Bishop(true), Position("A1"));
 
-    EXPECT_THROW(cb.play(Position("A1"), Position("A6"), false), InvalidMoveException);
-    EXPECT_THROW(cb.play(Position("A1"), Position("F1"), false), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("A1"), Position("A6"), true), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("A1"), Position("F1"), true), InvalidMoveException);
 }
 
 TEST(BishopTest, CannotJumpOverPiece) {
@@ -39,7 +39,7 @@ TEST(BishopTest, CannotJumpOverPiece) {
     cb.place(new Bishop(true), Position("A1"));
     cb.place(new Pawn(true), Position("B2")); // Block diagonal path
 
-    EXPECT_THROW(cb.play(Position("A1"), Position("C3"), false), InvalidMoveException);
+    EXPECT_THROW(cb.play(Position("A1"), Position("C3"), true), InvalidMoveException);
 }
 
 TEST(BishopTest, CaptureEnemyPiece) {
