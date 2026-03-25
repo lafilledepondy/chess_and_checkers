@@ -206,11 +206,19 @@ void Checkerboard::saveToFile(const std::string& filename) const {
         history.pop();
     }
 
-    // write
+    auto toAlgebraic = [](const Position& pos) {
+        std::string s = pos.toString();
+        if (s.size() >= 2 && s.front() == '[' && s.back() == ']') {
+            s = s.substr(1, s.size() - 2);
+        }
+        return s;
+    };
+
+    // write as: WHITE,E2,E4
     for (auto it = temp.rbegin(); it != temp.rend(); ++it) {
         file << (it->turnBlack ? "BLACK" : "WHITE") << ","
-             << it->from.toString() << ","
-             << it->to.toString() << ","
+             << toAlgebraic(it->from) << ","
+             << toAlgebraic(it->to)
              << "\n";
     }
 }
@@ -223,9 +231,29 @@ void Checkerboard::loadFromFile(const std::string& filename) {
 
     std::string turn, from, to;
 
+    // trim removes trailing whitespace 
+    // add carriage return characters
+    auto trim = [](std::string& value) {
+        while (!value.empty() && (value.back() == '\r' || value.back() == ' ' || value.back() == '\t')) {
+            value.pop_back();
+        }
+    };
+
     while (std::getline(file, turn, ',')) {
-        std::getline(file, from, ',');
-        std::getline(file, to);
+        if (!std::getline(file, from, ',')) {
+            break;
+        }
+        if (!std::getline(file, to)) {
+            break;
+        }
+
+        trim(turn);
+        trim(from);
+        trim(to);
+
+        if (turn.empty() || from.empty() || to.empty()) {
+            continue;
+        }
 
         play(Position(from), Position(to), turn == "BLACK");
     }
