@@ -62,8 +62,8 @@ void Checkerboard::initialConditions() {
 std::string Checkerboard::toString() const {
     std::ostringstream oss;
     oss << "\n" ;
-    for (int x = 0; x <= getWidth()+1; x++) {
-        for (int y = 0; y <= getHeight()+1; y++) {
+    for (int x = 0; x <= getWidth(); x++) {
+        for (int y = 0; y <= getHeight(); y++) {
             if (x==0 && y==0) {
                 oss << " ";
             }
@@ -71,21 +71,18 @@ std::string Checkerboard::toString() const {
                 oss << std::to_string(-(x-9)) << " ";
             }
             else if (x==0 && y!=0) { /// [0][*]
-                oss << " ";
-                // oss << " " <<char('A' + y - 1) << " ";
+                oss << "  " ;
             }
             else if (plateau_vec[x][y] != nullptr) {
                 oss << plateau_vec[x][y]->toString() << " ";
             }
-            // else if () {
-                
-            // }
             else {
                 oss << " . ";
             }
         }
         oss << "\n" ;
     }
+    oss << "  A  B  C  D  E  F  G  H";
     return oss.str();
 }
 
@@ -98,10 +95,10 @@ std::string Checkerboard::toUnicodeString() const {
                 oss << "  ";
             }
             else if (x != 0 && y == 0) {
-                oss << std::to_string(x) << " ";
+                oss << std::to_string(-(x-9)) << " ";
             }
             else if (x == 0 && y != 0) {
-                oss << " " << char('A' + y - 1) << " ";
+                oss << "  " ;
             }
             else if (plateau_vec[x][y] != nullptr) {
                 oss << " " << plateau_vec[x][y]->toUnicodeString() << " ";
@@ -112,5 +109,6 @@ std::string Checkerboard::toUnicodeString() const {
         }
         oss << "\n";
     }
+    oss << "   A  B  C  D  E  F  G  H";
     return oss.str();
 }
