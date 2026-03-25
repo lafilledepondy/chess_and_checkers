@@ -62,20 +62,24 @@ void Checkerboard::initialConditions() {
 std::string Checkerboard::toString() const {
     std::ostringstream oss;
     oss << "\n" ;
-    for (int x = 0; x <= getWidth(); x++) {
-        for (int y = 0; y <= getHeight(); y++) {
+    for (int x = 0; x <= getWidth()+1; x++) {
+        for (int y = 0; y <= getHeight()+1; y++) {
             if (x==0 && y==0) {
                 oss << " ";
             }
             else if (x!=0 && y==0) { // [*][0]
-                oss << std::to_string(x) << " ";
+                oss << std::to_string(-(x-9)) << " ";
             }
             else if (x==0 && y!=0) { /// [0][*]
-                oss << " " <<char('A' + y - 1) << " ";
+                oss << " ";
+                // oss << " " <<char('A' + y - 1) << " ";
             }
             else if (plateau_vec[x][y] != nullptr) {
                 oss << plateau_vec[x][y]->toString() << " ";
             }
+            // else if () {
+                
+            // }
             else {
                 oss << " . ";
             }

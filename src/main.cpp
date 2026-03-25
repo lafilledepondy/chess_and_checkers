@@ -40,9 +40,8 @@ void chessMain() {
             cb.play(start, end, turnBlack);
             turnBlack = !turnBlack; // switch player
             // spacing from the previous player
-            for(int i = 0; i < 3; ++i) {
-                std::cout << "\n";
-            }
+            std::cout << "\n";
+            std::cout << "\n";
         }
         catch (const std::exception& e) {
             std::cout << "Invalid move: " << e.what() << std::endl;
