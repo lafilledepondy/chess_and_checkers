@@ -26,9 +26,9 @@ void chessMain() {
         if (input == "undo") {
             if (cb.undoLastMove()) {
                 turnBlack = !turnBlack;
-                std::cout << "Last move undone.\n\n";
+                std::cout << "~~~Last move undone\n\n";
             } else {
-                std::cout << "No move to undo.\n";
+                std::cout << "~~~No move to undo\n\n";
             }
             continue;
         }
