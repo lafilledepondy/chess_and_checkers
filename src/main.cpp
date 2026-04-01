@@ -155,15 +155,15 @@ int main() {
     std::cout << "|                       CHESS & CHECKERS                       |" << std::endl;
     std::cout << "+==============================================================+" << std::endl;
 
-    // chessMain();
+    chessMain();
 
-    Checkerboard cb;
-    cb.initialConditions();
+    // Checkerboard cb;
+    // cb.initialConditions();
 
     // cb.play(Position("A2"), Position("A4"), true);
     
-    std::cout << cb.toString() << std::endl;
-    std::cout << cb.toUnicodeString() << std::endl;
+    // std::cout << cb.toString() << std::endl;
+    // std::cout << cb.toUnicodeString() << std::endl;
 
     return 0;
 }
