@@ -20,7 +20,7 @@ Check the official rules of Jeu de Dames on [Fédération Française du Jeu de D
 
 ### Chess Demo
 
-[![Chess Demo](assets/chess_demo_thumbnail.svg)](assets/liveDemo_chess.webm)
+[![Chess Demo GIF Preview](assets/liveDemo_chess.gif)](assets/liveDemo_chess.webm)
 
 Direct video link: [assets/liveDemo_chess.webm](assets/liveDemo_chess.webm)
 
@@ -28,12 +28,11 @@ You can also use local demo files from [demo_chess](demo_chess).
 
 ### Jeu de Dames Demo
 
-<video width="700" controls>
-  <source src="assets/liveDemo_jeuDeDames.webm" type="video/webm">
-  Your browser does not support the video tag.
-</video>
+[![Jeu de Dames Demo GIF Preview](assets/liveDemo_jeuDeDames.gif)](assets/liveDemo_jeuDeDames.webm)
 
-You can also use local demo files from [demo_jeu_de_dames](demo_jDD).
+Direct video link: [assets/liveDemo_jeuDeDames.webm](assets/liveDemo_jeuDeDames.webm)
+
+You can also use local demo files from [demo_jeuDD](demo_jeuDD).
 
 ## Build and Run
 
