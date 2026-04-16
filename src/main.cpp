@@ -352,8 +352,7 @@ void pseudoMain(BoardType& cb) {
     }
 }
 
-int main() {
-
+void mainBis() {
     for(int i = 0; i < 100; ++i) {
         std::cout << "\n";
     }    
@@ -386,6 +385,11 @@ int main() {
         }
         std::cout << "Unknown choice. Type: chess, dames, or quit.\n";
     }
+}
+
+int main() {
+
+    mainBis();
 
     // Checkerboard cb;
     // cb.initialConditions();
